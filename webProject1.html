@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML CSS JS</title>
+<style>
+    h1 {
+    text-align:center;
+    font-family:monospace;
+    font-size:40px;
+    margin-top:130px;
+    }
+
+    .colorBox{
+    display: flex;
+    justify-content: center;
+    }
+
+    .colorBox .buton{
+    display: inline-block;
+    border:solid;
+    width:70px;
+    height:70px;
+    margin-left:10px
+    }
+
+    .text{
+    display: flex;
+    justify-content: center;
+    margin-top:20px;
+    }
+
+    p{
+    text-align:center;
+    font-weight:bold;
+    width:500px;
+    font-size: 25px;
+    }
+
+    #pink{
+        background-color: pink;
+    }
+    #yellow{
+        background-color: yellow;
+    }
+    #grey{
+        background-color: grey;
+    }
+    #orange{
+        background-color: orange;
+    }
+</style>
+</head>
+<body>
+  
+  <h1>Color Scheme Switcher</h1>
+  <div class=colorBox>
+  <span class='buton', id = 'pink'></span>
+  <span class='buton', id = 'yellow'></span>
+  <span class='buton', id = 'grey'></span>
+  <span class='buton', id = 'orange'></span>
+  </div>
+  
+  <div class='text'>
+    <p>Try clicking on the above boxes to change 
+    the color of the background</p>
+  </div>
+
+  <script>
+    const buton = document.querySelectorAll(".buton")
+    const body = document.querySelector('body')
+    
+    buton.forEach(function(i){
+        console.log(i);
+        i.addEventListener('click', function(e){
+            console.log(e);
+            console.log(e.target);
+            if(e.target.id == 'grey'){
+                body.style.backgroundColor = e.target.id
+            }
+            if(e.target.id == 'yellow'){
+                body.style.backgroundColor = e.target.id
+            }
+            if(e.target.id == 'pink'){
+                body.style.backgroundColor = e.target.id
+            }
+            if(e.target.id == 'orange'){
+                body.style.backgroundColor = e.target.id
+            }
+        })
+    })
+    
+    
+</script>
+</body>
+</html>
