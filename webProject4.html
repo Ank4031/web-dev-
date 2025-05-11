@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(31, 31, 31);
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .center{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        table {
+            border: 2px solid rgb(230, 230, 230); /* outer border only */
+            border-collapse: separate; /* keep cell borders separate */
+        }
+        th, td {
+            border: solid white; /* no inner borders */
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1>Press any kess to see the information.</h1>
+    </div>
+</body>
+<script>
+    const center = document.querySelector(".center");
+    window.addEventListener("keydown",(e)=>{
+        center.innerHTML=`
+        <table>
+            <tr>
+                <th>key</th>
+                <th>key code</th>
+                <th>code</th>
+            </tr>
+            <tr>
+                <td>${e.key === " " ? "space": e.key}</td>
+                <td>${e.keyCode}</td>
+                <td>${e.code}</td>
+            </tr>
+        </table>
+        `
+    })
+</script>
+</html>
